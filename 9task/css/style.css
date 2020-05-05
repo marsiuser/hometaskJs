@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+
+.wrap{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 400px;
+}
+.first, .second{
+     width: 100px;
+     height: 100px;
+     background-color: aliceblue;
+     border: rgb(165, 165, 165);
+     border-radius: 10px;
+     margin: 40px;
+     cursor: pointer;
+}
+
+.new-color__blue{
+    background-color: rgb(99, 15, 255);
+}
+
+.new-color__green{
+    background-color: rgb(16, 216, 99);
+}
