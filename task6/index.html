@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h3 class="heading"></h3>
+        <div class="container-info">
+            <p class="container-info__contacts"></p>
+            <span id="dots"></span>
+            <button onclick="showMore()" class="btn" id="myBtn">Show more</button>
+            <button onclick="addInfo()" class="btn" id="addPic">Add artist</button>
+            <div id="more">
+                <p class="container-info__count"></p>
+                <p class="container-info__names"></p>
+            </div>
+        </div>
+        <div class="container-artist">
+            <p>Artist you added</p>
+            <div class="container-artist__details">
+                <h3 class="container-artist__name"></h3>
+                <p class="container-artist__contacts"></p>
+                <p class="container-artist__name__art"></p>
+                <p class="container-artist__year"></p>
+            </div>
+        </div>
+    </div>
+ <script src="js/script.js" defer></script>   
+</body>
+</html>
