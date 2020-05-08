@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task 4</title>
+</head>
+<body>
+    <script>
+        let n = Number(prompt("Enter lengh of array: ")); 
+        let fibonacci = [0, 1]; 
+        const getFibonacci = () => {
+            for (i = 2; i < n; i ++) {
+                fibonacci[i] = fibonacci[i-1] + fibonacci[i-2];
+            }
+            console.log("Length of array= " + n);
+            console.log(fibonacci);
+        }
+        getFibonacci();
+    </script>
+</body>
+</html>

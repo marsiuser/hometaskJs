@@ -12,7 +12,6 @@ const artistFirst = new Artist({
     contacts: "manetedik@gmail.com, +38093445656"
 });
 
-
 class Art extends Artist{
     constructor(options){
         super(options)
