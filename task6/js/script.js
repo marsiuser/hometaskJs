@@ -4,10 +4,6 @@ class Artist{
         this.surname = options.surname;
         this.contacts = options.contacts;
     }
-
-    addInfo(){
-        console.log('I am Animal')
-    }
 }
 
 const artistFirst = new Artist({
@@ -30,17 +26,7 @@ class Art extends Artist{
     }
 }
 
-
 Art.count = 0;
-
-let nameNew = prompt("Enter name of artist");
-let surnameNew = prompt("Enter suname of artist");
-let contactsNew = prompt("Enter contacts");
-let namePicNew = prompt("Enter name o the picture");
-let yearNew = prompt("Enter year of release");
-let executNew = prompt("Enter execution technic");
-let sizeNew = prompt("Enter size of the picture");
-
 
 const picBreakfast = new Art({
     name: artistFirst.name,
@@ -82,7 +68,6 @@ const picBalcony = new Art({
     size: '71 см x 93 sm'
 });
 
-
 const picScream = new Art({
     name: "Edwar",
     surname: "Munch",
@@ -92,7 +77,6 @@ const picScream = new Art({
     executionTech: "oil",
     size: ' 191 × 264,5 sm'
 });
-
 
 const picBlackSquare = new Art({
     name: "Kazimir",
@@ -104,38 +88,53 @@ const picBlackSquare = new Art({
     size: ' 80 × 80 sm'
 });
 
-const newPic = new Art({
-    name: nameNew,
-    surname: surnameNew,
-    contacts: contactsNew,
-    namePic: namePicNew,
-    year: yearNew,
-    executionTech: executNew,
-    size: sizeNew
-});
-
-console.log("Our artist is "+ artistFirst.name + " " + artistFirst.surname);
-console.log("Contacts : " + artistFirst.contacts);
-console.log("Number of paintings by Eduard Manet = "+ Art.count);
-console.log("Names of paintings: " + picBreakfast.namePic + ", " + picOlympia.namePic + ", " + picRailway.namePic + ", " + picBalcony.namePic);
-
-let heading = document.querySelector(".heading");
-let contacts = document.querySelector(".container-info__contacts");
-let countOfPic = document.querySelector(".container-info__count");
-let namesOfPic = document.querySelector(".container-info__names");
 let newArtist = document.querySelector(".container-artist__name");
 let newContacts = document.querySelector(".container-artist__contacts");
 let newNamePic = document.querySelector(".container-artist__name__art");
 let newYear = document.querySelector(".container-artist__year");
 
+let heading = document.querySelector(".heading");
+let contacts = document.querySelector(".container-info__contacts");
+let countOfPic = document.querySelector(".container-info__count");
+let namesOfPic = document.querySelector(".container-info__names");
+
+function addInfo(){
+    const newPic = new Art({
+        name: nameNew=prompt("Enter name of artist"),
+        surname: surnameNew= prompt("Enter suname of artist"),
+        contacts: contactsNew = prompt("Contacts"),
+        namePic: namePicNew = prompt("Enter name o the picture"),
+        year: yearNew = prompt("Enter year of release"),
+        executionTech: executNew = prompt("Enter execution technic") ,
+        size: sizeNew = prompt("Enter size of the picture")
+    });
+    newArtist.innerHTML = newPic.name + " " + newPic.surname;
+    newContacts.innerHTML = "Contacts : " + newPic.contacts;
+    newNamePic.innerHTML ="Name of picture: " + newPic.namePic;
+    newYear.innerHTML ="Year of release: " + newPic.year;
+    let containerArtist = document.querySelector(".container-artist");
+    containerArtist.style.display = "inline";
+    if(this.nameNew === "Eduard" &&  this.surnameNew ==="Manet"){
+        ++Art.count;
+    }
+    else{
+        Art.count+=0;
+    }
+    countOfPic.innerHTML = "You add new picture, current number of pictures by Eduard Manet - "+ Art.count;
+    console.log("You add new picture, current number of pictures  by Eduard Manet= " + Art.count);
+};
+
+document.querySelector("#addPic").onclick = addInfo;
+console.log("Our artist is "+ artistFirst.name + " " + artistFirst.surname);
+console.log("Contacts : " + artistFirst.contacts);
+console.log("Number of paintings by Eduard Manet = "+ Art.count);
+console.log("Names of paintings: " + picBreakfast.namePic + ", " + picOlympia.namePic + ", " + picRailway.namePic + ", " + picBalcony.namePic);
+
+
 heading.innerHTML = "Our artist is "+ artistFirst.name + " " + artistFirst.surname;
 contacts.innerHTML = "Contacts : " + artistFirst.contacts;
 countOfPic.innerHTML = "Number of pictures by Eduard Manet - "+ Art.count;
 namesOfPic.innerHTML ="Names of pictures: " + picBreakfast.namePic + ", " + picOlympia.namePic + ", " + picRailway.namePic + ", " + picBalcony.namePic;
-newArtist.innerHTML = newPic.name + " " + newPic.surname;
-newContacts.innerHTML = "Contacts : " + newPic.contacts;
-newNamePic.innerHTML ="Name of picture: " + newPic.namePic;
-newYear.innerHTML ="Year of release: " + newPic.year;
 
 const showMore = () => {
   let dots = document.getElementById("dots");

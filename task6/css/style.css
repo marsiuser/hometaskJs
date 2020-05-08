@@ -56,3 +56,7 @@ p{
 .container-artist__details p{
     margin: 0px 0px 7px;
 }
+
+.container-artist{
+    display: none;
+}
